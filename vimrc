@@ -1,16 +1,22 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"Settings - Line numbers, Tabs, Etc.
+set number
+set et               "Convert tabs to spaces - Expand Tab"
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" " when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" " On pressing tab, insert 4 spaces
+set expandtab
+syntax enable
+
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-set number
-set et               "Convert tabs to spaces - Expand Tab"
-set tabstop=4        "Length of tab" 
-
-
-syntax enable
-
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -24,20 +30,11 @@ filetype plugin indent on    " required
 "filetype plugin on
 autocmd vimenter * NERDTree
 
-
+"Mappings
 map <S-h> <c-w>w
 map <S-w> gt
 imap ii <Esc>
 imap :w <Esc>:w
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
-
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+let mapleader=","
