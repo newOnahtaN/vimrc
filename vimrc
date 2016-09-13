@@ -39,3 +39,11 @@ imap :w <Esc>:w
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 let mapleader=","
+
+
+"For getting Visual Line to highlight on Windows Subystem for Linux -
+"http://stackoverflow.com/questions/14315519/conemu-vim-syntax-highlight
+set term=xterm
+set t_co=256
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
